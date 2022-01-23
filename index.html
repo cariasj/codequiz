@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>JS Code Quiz</title>
+        <link rel="stylesheet" href="./assets/css/style.css">
+    </head>
+
+    <body> 
+
+        <header>
+            <h4 id="view-scores">Scores</h4> 
+            <h4 class="timer">Time: <span id="timer"></span></h4>
+        </header>
+
+        <section id="starter-container" class="show">
+            <section class="container start">
+                <h1>Coding Quiz</h1>  
+                <p>Try to answer the following code-related quesitons within the time limit. 
+                   Keep in mind that incorrect answers will penelize your score/time by ten seconds. 
+                </p>
+                <button class="btn startend" id="start-game">Start Quiz</button>
+            </section>    
+        </section>
+
+        <section id="question-container" class="hide">
+            <section class="container questions">
+                <section id="question"></section>
+                <section id="answer-buttons" class="btn-grid"></section>
+            </section>
+        </section>
+
+        <section id="end-container" class="hide">
+           <section class="container end">
+            <section id=score-banner>
+                <h1>End</h1>
+            </section>  
+            <form id="name-form" class="name">
+              <p> Name:
+                <input type="text" name="name" id="name" class="text-input" />
+                <button class="btn startend" id="sumbit-score" type="submit">Submit</button> </p>
+              </form>
+            </section>
+        </section>
+
+        <section id="score-container" class="hide">
+          <section class="scores container">
+            <h1 class="score">Scores</h1>
+            <ol id="score-list" class="score-list"></ol>
+        <section>
+            <button class="btn" id="go-back">Go back</button>
+            <button class="btn" id="clear-scores">Clear Scores</button>
+        </section>
+        </section>
+    </section>
+
+    <section class="hide" id="correct">
+        <h2>Correct</h2>
+    </section>
+    <section class="hide" id="wrong">
+        <h2>Incorrect</h2>
+    </section>
+
+    <script src="./assets/js/script.js"></script> 
+</body>
+</html>
