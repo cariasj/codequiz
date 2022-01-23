@@ -7,7 +7,7 @@ var containerHighScoresEl = document.getElementById("score-container")
 var ViewHighScoreEl = document.getElementById("view-scores")
 var listHighScoreEl = document.getElementById("score-list")
 var correctEl = document.getElementById("correct")
-var wrongEl = document.getElementById("incorrect")
+var incorrectEl = document.getElementById("incorrect")
 //buttons
 var btnStartEl = document.querySelector("#start-game");
 var btnGoBackEl = document.querySelector("#go-back")
@@ -32,31 +32,31 @@ var QuestionIndex = 0
 
 // Questions
 var questions = [
-  { q: 'Inside which HTML element do we put the JavaScript?', 
+  { q: 'Question: Inside which HTML element do we put the JavaScript?', 
     a: '1. <script>', 
     choices: [{choice: '1. <script>'}, {choice: '2. <scripting>'}, {choice: '3. <js>'}, {choice: '4. <javascript>>'}]
   },
-  { q: 'Where is the correct place to insert a JavaScript?', 
-    a: '1. the <body> section', 
-    choices: [{choice: '1. The <body> section'}, {choice: '2. Both the <head> section and the <body> section'}, {choice: '3. The <head> section'}, {choice: '4. the <title> section'}]
+  { q: 'Question: Where is the correct place to insert a JavaScript?', 
+    a: '1. <body> section', 
+    choices: [{choice: '1. <body> section'}, {choice: '2. <head> & <body> section'}, {choice: '3. <head> section'}, {choice: '4. <title> section'}]
   },
-  { q: 'Which built-in method adds one or more elements to the end of an array and returns the new length of the array?', 
+  { q: 'Question: Which built-in method adds one or more elements to the end of an array and returns the new length of the array?', 
     a: '3. push()', 
     choices: [{choice: '1. last()'}, {choice: '2. put()'}, {choice: '3. push()'}, {choice: '4. None of the above'}]
   },
-  { q: 'Which of the following function of Number object returns the number"s" value?', 
+  { q: 'Question: Which of the following function of Number object returns the number"s" value?', 
     a: '2. valueOf()', 
     choices: [{choice: '1. toString()'}, {choice: '2. valueOf()'}, {choice: '3. toLocaleString()'}, {choice: '4. tpPrecision()'}]
   },
-  { q: 'Which of the following function of Array object adds and/or removes elements from an array?', 
+  { q: 'Question: Which of the following function of Array object adds and/or removes elements from an array?', 
     a: '3. splice()', 
     choices: [{choice: '1. toSource()'}, {choice: '2. sort()'}, {choice: '3. splice()'}, {choice: '4. unshift()'}]
   },
-  { q: 'Which built-in method returns the characters in a string beginning at the specified location?', 
-    a: '2. substr()', 
+  { q: 'Question: Which built-in method returns the characters in a string beginning at the specified location?', 
+    a: '1. substr()', 
     choices: [{choice: '1. substr()'}, {choice: '2. getSubString()'}, {choice: '3. slice()'}, {choice: '4. None of the above'}]
   },
-  { q: 'Which of the following function of Array object applies a function simultaneously against two values of the array (from left-to-right) as to reduce it to a single value?', 
+  { q: 'Question: Which of the following function of Array object applies a function simultaneously against two values of the array (from left-to-right) as to reduce it to a single value?', 
     a: '3. reduce()', 
     choices: [{choice: '1. pop()'}, {choice: '2. push()'}, {choice: '3. reduce()'}, {choice: '4.reduceRight()'}]
   },
@@ -78,9 +78,9 @@ var renderStartPage = function () {
       correctEl.classList.remove("show");
       correctEl.classList.add("hide")
   }
-  if (wrongEl.className = "show") {
-      wrongEl.classList.remove("show");
-      wrongEl.classList.add("hide");
+  if (incorrectEl.className = "show") {
+      incorrectEl.classList.remove("show");
+      incorrectEl.classList.add("hide");
   }
 }
 
@@ -145,15 +145,15 @@ var answerCorrect = function() {
   if (correctEl.className = "hide") {
       correctEl.classList.remove("hide")
       correctEl.classList.add("banner")
-      wrongEl.classList.remove("banner")
-      wrongEl.classList.add("hide")
+      incorrectEl.classList.remove("banner")
+      incorrectEl.classList.add("hide")
       }
   }  
 // Incorrects
 var answerIncorrect = function() {
-  if (wrongEl.className = "hide") {
-      wrongEl.classList.remove("hide")
-      wrongEl.classList.add("banner")
+  if (incorrectEl.className = "hide") {
+      incorrectEl.classList.remove("hide")
+      incorrectEl.classList.add("banner")
       correctEl.classList.remove("banner")
       correctEl.classList.add("hide")
   }
@@ -170,7 +170,7 @@ var answerCheck = function(event) {
       else {
         answerIncorrect()
         score = score - 1;
-        timeleft = timeleft - 5;
+        timeleft = timeleft - 9;
     };
 
   // Next Q
@@ -285,9 +285,9 @@ var displayHighScores = function() {
       correctEl.classList.add("hide");
   }
 
-  if (wrongEl.className = "show") {
-      wrongEl.classList.remove("show");
-      wrongEl.classList.add("hide");
+  if (incorrectEl.className = "show") {
+      incorrectEl.classList.remove("show");
+      incorrectEl.classList.add("hide");
       }
   
 }
